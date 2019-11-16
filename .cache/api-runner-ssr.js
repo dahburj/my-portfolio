@@ -1,17 +1,17 @@
 var plugins = [{
-      plugin: require('/Users/jamal/node-projects/tfe-energy/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
+      plugin: require('/Users/jamal/node-projects/my-portfolio/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/jamal/node-projects/tfe-energy/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/Users/jamal/node-projects/my-portfolio/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/jamal/node-projects/tfe-energy/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      plugin: require('/Users/jamal/node-projects/my-portfolio/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/jamal/node-projects/tfe-energy/node_modules/gatsby-plugin-google-tagmanager/gatsby-ssr'),
+      plugin: require('/Users/jamal/node-projects/my-portfolio/node_modules/gatsby-plugin-google-tagmanager/gatsby-ssr'),
       options: {"plugins":[],"id":"GTM-W9TQVF7","includeInDevelopment":true,"defaultDataLayer":{"type":"object","value":{"platform":"gatsby"}}},
     },{
-      plugin: require('/Users/jamal/node-projects/tfe-energy/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      plugin: require('/Users/jamal/node-projects/my-portfolio/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"name":"Jamal Dahbur","short_name":"jamal.dahbur","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui","icon":"src/images/favicon.jpg"},
     }]
 // During bootstrap, we write requires at top of this file which looks like:

@@ -99,6 +99,7 @@ class Navbar extends React.Component {
 				}
 			}
 		`
+		
 		return (
 			<NavBar>
 				<StyledList
@@ -106,6 +107,7 @@ class Navbar extends React.Component {
 				>
 					{ linkMap }
 				</StyledList>
+				{/*
 				<NavIcons>
 					<TopSocialButton className={'top-button-social'}
 						 href={'https://medium.com/tfe-energy-says'}
@@ -120,6 +122,7 @@ class Navbar extends React.Component {
 						<span><i className={'icon medium'} /> Get involved</span>
 					</TopSocialButton>
 				</NavIcons>
+				*/}
 			</NavBar>
 		);
 	}

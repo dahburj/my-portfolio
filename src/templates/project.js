@@ -120,7 +120,7 @@ const Project = ({ data }) => {
 					) : (
 						<h3>Share this</h3>
 					)}
-					<a href={`https://twitter.com/intent/tweet?text=https://tfe-energy.netlify.com/project/${slug}`}
+					<a href={`https://twitter.com/intent/tweet?text=https://jdahbur.com/project/${slug}`}
 					   style={linkStyle}
 					   target={'_blank'}
 					>
@@ -128,7 +128,7 @@ const Project = ({ data }) => {
 							Share on Facebook
 						</TagLabel>
 					</a>
-					<a href={`https://www.facebook.com/sharer/sharer.php?u=https://tfe-energy.netlify.com/project/${slug}`}
+					<a href={`https://www.facebook.com/sharer/sharer.php?u=https://jdahbur.com/project/${slug}`}
 					   style={linkStyle}
 					   target={'_blank'}
 					>
