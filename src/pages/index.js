@@ -11,7 +11,7 @@ import MobileNavbar from '../components/mobileNavbar';
 import ContactPage from '../components/contact';
 import Footer from '../components/footer';
 import { Controller, Scene } from 'react-scrollmagic/dist/index';
-import VIDEOS from '../constants/videos'
+import VIDEOS from '../constants/videos';
 import CarouselComponent from '../components/pureCarousel';
 import GridComponent from '../components/grid';
 import 'semantic-ui-css/components/reset.css';
@@ -20,7 +20,8 @@ import 'semantic-ui-css/components/divider.css';
 import "./index.css";
 import '../styles/animations.scss';
 import '../styles/navbar.scss';
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
+
 class IndexPage extends React.Component {
   constructor (props) {
     super(props)
@@ -55,7 +56,8 @@ class IndexPage extends React.Component {
 			delay: 0,
 			smooth: 'easeInOutQuart'
 		})
-	};
+  }
+  
   render () {
   	const { bigLogo } = this.state;
     // const videosLoaded = this.state.videosLoaded >= this.state.videosEmbedded && this.state.videosEmbedded !== 0
@@ -134,7 +136,7 @@ class IndexPage extends React.Component {
     	text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       text-align: left;
       h1 {
-      	text-align: left;
+      	text-align: center;
       	width: 100%;
       	@media screen and (max-width: 599px) {
       		margin-top: 2.5rem;
@@ -187,6 +189,10 @@ class IndexPage extends React.Component {
       		text-align: center;
       	}
       }
+      &.col-centered{
+        float: none;
+        margin: 0 auto;
+      }
     `
 	  const TextPartSettings = {
     	heightClass: 'fifth-height',
@@ -194,24 +200,22 @@ class IndexPage extends React.Component {
 		  triggerHook: 0.15
 	  }
 
-	  const projectAndReportData = this.props.data.allContentfulContentfulProject.edges
-	  
+    const projectAndReportData = this.props.data.allContentfulContentfulProject.edges
+
     return (
       <Layout>
         <SEO title="Home" keywords={[`Jamal`, `Dahbur`, `CEO`]} />
         <Navbar />
         <MobileNavbar />
         <Controller>
-		<Scene
+		      <Scene
 	          pin={false}
 	          id={'home'}
 	          duration={'50%'}
-	          triggerHook={0}
-          >
-            <div className="section"
-                 id={'home'}
-            ></div>
-			</Scene>
+	          triggerHook={0}>
+            <div className="section" id={'home'}>
+            </div>
+          </Scene>
 	        <Scene pin={true} triggerHook={0}>
 		        <div className="section">
 			        <VideoPlayer
@@ -225,11 +229,8 @@ class IndexPage extends React.Component {
 	          pin={false}
 	          id={'home'}
 	          duration={'50%'}
-	          triggerHook={0}
-          >
-            <div className="section"
-                 id={'home'}
-            >
+	          triggerHook={0}>
+            <div className="section" id={'home'}>
 	            <div>
 		            <Waypoint
 			            topOffset={'50%'}
@@ -239,103 +240,46 @@ class IndexPage extends React.Component {
 		            <Logo
 			            isBig={this.state.bigLogo}
 		            />
-	            </div>
-            </div>
+	              </div>
+                </div>
           </Scene>
-
-		  <Scene pin={true} duration={TextPartSettings.duration} triggerHook={TextPartSettings.triggerHook}>
+          <Scene pin={true} duration={TextPartSettings.duration} triggerHook={0.05}>
 		        <div className='projects'>
-			        <BreakSection className={TextPartSettings.heightClass}>
-				        <Waypoint onEnter={() => console.log('entered section 1 of video 3')} />
-							<h2>Former Projects Developed</h2>
-			        </BreakSection>
-					<BreakSection
-				        className={'half-height carousel'}
-			        >
-				        <Waypoint onEnter={() => console.log('entered project carousel')} />
-				        <CarouselComponent
-					        linkToAll={'/our-work/'}
-					        linkToSingle={'/project/'}
-					        title={'Project gallery'}
-					        data={projectAndReportData}
-				        />
-			        </BreakSection>
-		        </div>
+              <BreakSection
+                    className={'half-height carousel'}>
+                    <Waypoint onEnter={() => console.log('entered section 1 of video 3')} />
+                    <h1>Former Projects Developed</h1>
+                    <Waypoint onEnter={() => console.log('entered project carousel')} />
+                    <CarouselComponent
+                      linkToAll={'/our-work/'}
+                      linkToSingle={'/project/'}
+                      title={'Project gallery'}
+                      data={projectAndReportData}
+                    />
+                  </BreakSection>
+              </div>
 			</Scene>
-{/*
+      {/*
 			<Scene
 	          pin={true}
 	          duration={TextPartSettings.duration}
-	          triggerHook={0.25}
+	          triggerHook={0}
           >
-            <div className="reports">
+            <div className="col-centered">
               <BreakSection className={'full-height'}>
                 <Waypoint onEnter={() => console.log('entered section 1')} />
-                <h1>My Faults</h1>
-                <p>We believe in the future, because we believe that the required change is within our grasp, if we can refocus minds, innovate and invest accordingly.</p>
+                <h1 text-align="center">PoseNet</h1>
+                <Link to="/indexPose/">
+                <button class="ui fade animated button">
+                  <div class="visible content">PoseNet</div>
+                  <div class="hidden content"><i aria-hidden="true" class ="universal access icon"></i></div>
+                </button>
+                </Link>
               </BreakSection>
-            </div>
-      </Scene>
-*/}
-			{/*
-          <Scene pin={true} triggerHook={0}>
-            <div className="section">
-              <VideoPlayer
-                loadingHandler={() => this.videoIsReady()}
-                video={VIDEOS[1]}
-              />
-            </div>
-          </Scene>
-			*/}
-	        {/*
-	        <Scene pin={true} duration={TextPartSettings.duration} triggerHook={TextPartSettings.triggerHook}>
-		        <div>
-			        <BreakSection className={TextPartSettings.heightClass}>
-				        <Waypoint onEnter={() => console.log('entered section 3 of video 2')} />
-				        <p>Capturing the opportunity to limit climate change requires fast, smart and decisive action. Most importantly, it requires a deep conviction that it can be done.</p>
-			        </BreakSection>
-		        </div>
-	        </Scene>
-	        */}
-		{
-		/*
-			<Scene triggerHook={0} pin={false}>
-		        <div>
-			        <BreakSection className={'full-height carousel'}>
-				        <Waypoint onEnter={() => console.log('entered reports carousel')} />
-			        </BreakSection>
-		        </div>
-	        </Scene>
-		*/}
-		{/*
-          <Scene pin={true} triggerHook={0}>
-            <div className="section">
-              <VideoPlayer
-                loadingHandler={() => this.videoIsReady()}
-                video={VIDEOS[2]}
-              />
-            </div>
-          </Scene>
-	        <Scene pin={true} duration={TextPartSettings.duration} triggerHook={TextPartSettings.triggerHook}>
-		        <div>
-			        <BreakSection className={TextPartSettings.heightClass}>
-				        <Waypoint onEnter={() => console.log('entered section 1 of video 3')} />
-				        {<h1>This is where TFE Energy works</h1>}
-
-			        </BreakSection>
-		        </div>
-			</Scene>
-		*/}
-
-	        {/*<Scene pin={true} duration={TextPartSettings.duration} triggerHook={TextPartSettings.triggerHook}>
-		        <div>
-			        <BreakSection className={TextPartSettings.heightClass}>
-				        <Waypoint onEnter={() => console.log('entered section 3 of video 3')} />
-
-			        </BreakSection>
-		        </div>
-	</Scene>*/}
-        </Controller>
+          </div>
+        </Scene>
+      */}
+      </Controller>
       </Layout>
     )
   }

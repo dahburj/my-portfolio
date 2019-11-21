@@ -7,6 +7,7 @@ exports.components = {
   "component---src-pages-404-js": () => import("../src/pages/404.js" /* webpackChunkName: "component---src-pages-404-js" */),
   "component---src-pages-index-js": () => import("../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
   "component---src-pages-our-work-js": () => import("../src/pages/our-work.js" /* webpackChunkName: "component---src-pages-our-work-js" */),
+  "component---src-pages-our-work-2-js": () => import("../src/pages/our-work2.js" /* webpackChunkName: "component---src-pages-our-work-2-js" */),
   "component---src-pages-scrollmagic-components-lowres-js": () => import("../src/pages/scrollmagic/components-lowres.js" /* webpackChunkName: "component---src-pages-scrollmagic-components-lowres-js" */),
   "component---src-pages-scrollmagic-components-js": () => import("../src/pages/scrollmagic/components.js" /* webpackChunkName: "component---src-pages-scrollmagic-components-js" */),
   "component---src-pages-scrollmagic-sectionwipes-js": () => import("../src/pages/scrollmagic/sectionwipes.js" /* webpackChunkName: "component---src-pages-scrollmagic-sectionwipes-js" */),

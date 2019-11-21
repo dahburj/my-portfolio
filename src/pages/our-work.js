@@ -15,7 +15,7 @@ import 'semantic-ui-css/components/header.css';
 import 'semantic-ui-css/components/form.css';
 import 'semantic-ui-css/components/segment.css';
 
-const OurWork = ({data}) => {
+const MyWork = ({data}) => {
   const [filterValue, setFilterValue] = useState('');
   
   const allProjects = data.allContentfulContentfulProject.edges
@@ -35,7 +35,7 @@ const OurWork = ({data}) => {
                    autoFocus
                    onChange={props.changeHandler}
                    value={ props.value }
-                   placeholder={'Search our projects..'}
+                   placeholder={'Search projects..'}
       />
     )
   }
@@ -66,8 +66,8 @@ const OurWork = ({data}) => {
         </div>
         {/* TITLE */}
         <div className="ui vertical aligned segment">
-          <h1>Our work</h1>
-          <p>Type keywords into the input element to filter our work gallery.</p>
+          <h1>Prev. Work</h1>
+          <p>Type keywords into the input element to filter through work gallery.</p>
         </div>
         {/* INPUT */}
         <div className="ui vertical aligned segment">
@@ -93,7 +93,7 @@ const OurWork = ({data}) => {
     </Layout>
   )
 }
-export default OurWork;
+export default MyWork;
 export const query = graphql`
   query  {
 

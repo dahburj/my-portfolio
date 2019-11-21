@@ -3,15 +3,36 @@ const { BLOCKS, MARKS, INLINES } = require('@contentful/rich-text-types');
 module.exports = {
   siteMetadata: {
     title: `Jamal Dahbur`,
-    description: `We believe in the future, because we believe that the required change is within our grasp, if we can refocus minds, innovate and invest accordingly.`,
-    author: `Marc Fehr`,
-    siteUrl: `https://tfe-energy.netlify.com`,
+    description: `In progress...`,
+    author: `Jamal Dahbur`,
+    siteUrl: `https://www.jdahbur.com`,
   },
   plugins: [
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-typescript`,
+    'gatsby-plugin-tslint',
+    'gatsby-plugin-eslint',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-tslint',
+      options: {
+        test: /\.ts$|\.tsx$/,
+        exclude: /(node_modules|cache|public)/
+      }
+    },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {

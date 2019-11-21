@@ -5,6 +5,8 @@ import SEO from "../components/seo";
 import styled from "styled-components";
 import 'semantic-ui-css/components/list.css';
 import 'semantic-ui-css/components/icon.css';
+import { Button, Icon } from 'semantic-ui-react'
+
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import postcss from "postcss";
@@ -120,7 +122,7 @@ const Project = ({ data }) => {
 					) : (
 						<h3>Share this</h3>
 					)}
-					<a href={`https://twitter.com/intent/tweet?text=https://jdahbur.com/project/${slug}`}
+					<a href={`https://twitter.com/intent/tweet?text=https://www.jdahbur.com/project/${slug}`}
 					   style={linkStyle}
 					   target={'_blank'}
 					>
@@ -128,7 +130,7 @@ const Project = ({ data }) => {
 							Share on Facebook
 						</TagLabel>
 					</a>
-					<a href={`https://www.facebook.com/sharer/sharer.php?u=https://jdahbur.com/project/${slug}`}
+					<a href={`https://www.facebook.com/sharer/sharer.php?u=https://www.jdahbur.com/project/${slug}`}
 					   style={linkStyle}
 					   target={'_blank'}
 					>

@@ -68,7 +68,7 @@ export default function CardComponent({data, linkTo}) {
 
 					</Button>
 				</Link>
-				<a href={`https://twitter.com/intent/tweet?text=https://tfe-energy.netlify.com${linkTo}`}
+				<a href={`https://twitter.com/intent/tweet?text=https://www.jdahbur.com${linkTo}`}
 			     style={linkStyle}
 				   target={'_blank'}
 				>
@@ -76,10 +76,9 @@ export default function CardComponent({data, linkTo}) {
 						<span><i className='ui icon twitter' />Share</span>
 					</Button>
 				</a>
-				<a href={`https://www.facebook.com/sharer/sharer.php?u=https://tfe-energy.netlify.com${linkTo}`}
+				<a href={`https://www.facebook.com/sharer/sharer.php?u=https://www.jdahbur.com${linkTo}`}
 				   style={linkStyle}
-				   target={'_blank'}
-				>
+				   target={'_blank'}>
 					<Button size="small" color="primary">
 						<span><i className='ui icon facebook' />Share</span>
 					</Button>

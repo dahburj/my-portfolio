@@ -1,4 +1,7 @@
 module.exports = [{
+      plugin: require('../node_modules/gatsby-plugin-manifest/gatsby-browser.js'),
+      options: {"plugins":[],"name":"GatsbyJS","short_name":"GatsbyJS","start_url":"/","background_color":"#f7f0eb","theme_color":"#a2466c","display":"standalone"},
+    },{
       plugin: require('../node_modules/gatsby-plugin-web-font-loader/gatsby-browser.js'),
       options: {"plugins":[],"google":{"families":["Roboto","Orbitron"]}},
     },{
