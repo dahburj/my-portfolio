@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import './layout.css';
+import zIndex from '@material-ui/core/styles/zIndex';
 
 //import Header from "./header"
 //import "./layout.css"
@@ -16,7 +17,7 @@ import './layout.css';
 const Layout = ({ children }) => {
   // eslint-disable-next-line
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query SiteTitleNewQuery {
       site {
         siteMetadata {
           title
@@ -40,7 +41,6 @@ const Layout = ({ children }) => {
     </>
   )
 }
-
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }

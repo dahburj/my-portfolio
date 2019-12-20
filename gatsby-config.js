@@ -1,75 +1,24 @@
-const { BLOCKS, MARKS, INLINES } = require('@contentful/rich-text-types');
+const path = require('path')
+const pkg = require(`./package.json`);
+
 
 module.exports = {
   siteMetadata: {
-    title: `Jamal Dahbur`,
-    description: `In progress...`,
-    author: `Jamal Dahbur`,
-    siteUrl: `https://www.jdahbur.com`,
+    title: `Gatsby Default Starter`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-sass`,
     `gatsby-plugin-typescript`,
-    'gatsby-plugin-tslint',
-    'gatsby-plugin-eslint',
+    `gatsby-plugin-typescript-checker`,
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-root-import',
       options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
-        display: `standalone`,
+        src: path.join(__dirname, 'src'),
+        pages: path.join(__dirname, 'src/pages'),
+        root: path.join(__dirname, '.')
       },
-    },
-    {
-      resolve: 'gatsby-plugin-tslint',
-      options: {
-        test: /\.ts$|\.tsx$/,
-        exclude: /(node_modules|cache|public)/
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Roboto', 'Orbitron']
-        }
-      }
-    },
-    {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "GTM-W9TQVF7",
-      
-        // Include GTM in development.
-        // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: true,
-      
-        // datalayer to be set before GTM is loaded
-        // should be an object or a function that is executed in the browser
-        // Defaults to null
-        defaultDataLayer: { platform: "gatsby" },
-      
-        // Specify optional GTM environment details.
-        // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
-        // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
-        // dataLayerName: "YOUR_DATA_LAYER_NAME",
-      },
-    },
-    {
-      resolve:`gatsby-source-cloudinary`,
-      options:{
-        cloudName: 'marc-fehr-media',
-        apiKey: '262922255981186',
-        apiSecret: '6EMN8xsDaiIVOgSIgfyYVmUg5Pw',
-        resourceType: 'video',
-        prefix: `tfe/`
-      }
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -78,57 +27,73 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `r2n8q1jk3a3h`,
-        accessToken: `VSLNvEuJd_PD7yXIBQ8jVIVasE_YmsCCWPOvSfYd1sE`
-      }
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Jamal Dahbur`,
-        short_name: `jamal.dahbur`,
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/favicon.jpg`, // This path is relative to the root of the site.
+        background_color: `#000000`,
+        theme_color: `#f7f0eb`,
+        display: `standalone`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: `Roboto`,
+              variants: [`300`, `400`, `500`],
+            },
+          ],
+        },
       },
     },
     {
-      resolve: '@contentful/gatsby-transformer-contentful-richtext',
+      resolve: `gatsby-transformer-remark`,
       options: {
-        renderOptions: {
-          /*
-           * Defines custom html string for each node type like heading, embedded entries etc..
-           */
-          renderNode: {
-            // Example
-            [INLINES.ASSET_HYPERLINK]: node => {
-              return `<img class='custom-asset' src="${
-                node.data.target.fields.file['en-US'].url
-              }"/>`;
-            },
-            [INLINES.EMBEDDED_ENTRY]: node => {
-              return `<div class='custom-entry' />${node.data.target.fields.name['en-US']}</div>`;
-            },
-          },
-          /*
-           * Defines custom html string for each mark type like bold, italic etc..
-           */
-          renderMark: {
-            // Example
-            [MARKS.BOLD]: text => `<custom-bold>${text}<custom-bold>`,
-          },
-        },
+        plugins: [
+          {
+            resolve: `@raae/gatsby-remark-oembed`,
+            options: {
+              // usePrefix defaults to false
+              // usePrefix: true is the same as ["oembed"]
+              usePrefix: ["oembed", "video"],
+              providers: {
+                // Important to exclude providers
+                // that adds js to the page.
+                // If you do not need them.
+                exclude: ["Reddit"]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `r2n8q1jk3a3h`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: 'VSLNvEuJd_PD7yXIBQ8jVIVasE_YmsCCWPOvSfYd1sE',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
+    {
+      // This is only needed temporarily. Themes will automatically be transpiled in later versions.
+      resolve: `gatsby-plugin-compile-es6-packages`,
+      options: {
+        modules: [pkg.name],
+      },
+    },
   ],
 }

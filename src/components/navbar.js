@@ -65,15 +65,15 @@ class Navbar extends React.Component {
 			</li>
 		));
 		const NavBar = styled.nav`
-			position: fixed;
-		  display: flex;
+		position: fixed;
+		display: flex;
   		align-items: center;
   		justify-content: center;
   		top: 0;
   		left: 0;
   		right: 0;
   		height: auto;
-  		background: rgba(0,0,0,0.5);
+  		background: rgba(0,0,0,0);
   		z-index: 100;
 			color: white;
 			font-family: 'Orbitron', sans-serif;

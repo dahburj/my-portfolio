@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Typist from 'react-typist';
-import renderHTML from 'react-render-html';
+import parse from "html-react-parser";
 import 'react-typist/dist/Typist.css';
 
 class TypistComponent extends React.Component {
@@ -44,7 +44,7 @@ class TypistComponent extends React.Component {
 		const mappedTexts = textPieces.map((text, i) => (
 			<span key={`text-part-${i}`}>
 				<span className={'typist-header'}>
-					{ renderHTML(text.html) }
+					{ parse(text.html) }
 				</span>
 				<Typist.Backspace
 					count={ text.back || text.back === 0 ? text.back : text.text.length }

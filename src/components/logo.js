@@ -8,13 +8,13 @@ import 'semantic-ui-css/components/button.css';
 import TypistComponent from "./typist";
 
 const LogoContainer = styled.div`
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: flexible;
     top: 0;
     left: 0;
     justify-content: center;
@@ -48,13 +48,6 @@ const Logo = ({ img }) => (
           id={'jad-logo'}
           src={require('../images/' + img)}
           alt={'Jad Logo'}
-          onClick={() =>
-            scroller.scrollTo('home', {
-              duration: 800,
-              delay: 0,
-              smooth: 'easeInOutQuart'
-            })
-          }
         />
         <TypistComponent
           startDelay={500}
@@ -65,11 +58,13 @@ const Logo = ({ img }) => (
 
 Logo.propTypes = {
     img: PropTypes.string,
+    isBig: PropTypes.bool,
 };
 
 Logo.defaultProps = {
     //img: `tfe-logo-white.svg`,
-    img: 'jad-logo-white.svg',
+    img: 'Saturn.svg',
+    isBig: true,
 };
 
 export default Logo
