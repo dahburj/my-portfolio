@@ -9,8 +9,8 @@ const FaceModule:React.FC = () => {
     const [ref, inView, entry] = useInView();
 
     const unityContent = new UnityContent(
-        "/Face/Build/Face.json",
-        "/Face/Build/UnityLoader.js"
+        "/Face-Resp/Build/Face-Resp.json",
+        "/Face-Resp/Build/UnityLoader.js"
     );
     
     return (
