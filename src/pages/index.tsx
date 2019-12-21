@@ -334,19 +334,22 @@ const DigitalWalls = () => {
                             <img src="https://img.icons8.com/ios/96/000000/yoga.png" style={{height: 150, width:150, bottom: 0, position: "fixed"}} />
                           </a>
                         </li>
-                      <Link to="/faceDetector/">
-                        <li className="boxgrid__item">
+                      <Link to="/FaceMark/">
+                        <li className="boxgrid__item--wide">
                             <a href="#" className="box box--weather">
-                            <p><span className="text--large">Face</span><br />Mark</p>
+                          {/*  <p><span className="text--large">Face</span><br />Mark</p> */}
+                              <div /><div /><div />
                             </a>
                         </li>
                       </Link>
-                   {/*   <li className="boxgrid__item boxgrid__item--wide">
-                        <a href="#" className="box box--image">
-                        <img src="https://source.unsplash.com/600x400/?nature" className="box__img" alt="" />
-                        </a>
-                      </li>
-                      <li className="boxgrid__item boxgrid__item--push">
+                      <Link to="/faceDetector/">
+                        <li className="boxgrid__item boxgrid__item--wide">
+                          <a href="#" className="box box--image">
+                        {/*    <p><span className="text--large">Face</span><br />Detect</p> */}
+                          </a>
+                        </li>
+                      </Link>
+                   {/*}   <li className="boxgrid__item boxgrid__item--push">
                         <a href="#" className="box box--image">
                         <img src="https://source.unsplash.com/300x300/?people" className="box__img" alt="" />
                         </a>
