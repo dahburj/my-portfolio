@@ -4,20 +4,12 @@ import Loadable from "@loadable/component";
 import { useInView } from "react-intersection-observer";
 import Unity, { UnityContent } from "react-unity-webgl";
 
+const LoadedFaceModule = Loadable(() => import("../modules/FaceModule"));
 
-const faceDetector = () => {
-
-    const unityContent = new UnityContent(
-        "/test/Build/test.json",
-        "/test/Build/UnityLoader.js"
-    );
-    
-    return (
+export default function FaceComponent() {
+    return(
         <div>
-            <Unity unityContent={unityContent} />
+            <LoadedFaceModule />
         </div>
     )
-
-}
-const LoadableFace = Loadable(() => import("./faceDetector"));
-export default LoadableFace;
+};
