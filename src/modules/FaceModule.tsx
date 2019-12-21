@@ -4,18 +4,18 @@ import { useInView } from "react-intersection-observer";
 import Unity, { UnityContent } from "react-unity-webgl";
 import "../styles/index-new.scss"
 
-const FaceModule = () => {
+const FaceModule:React.FC = () => {
 
     const [ref, inView, entry] = useInView();
 
     const unityContent = new UnityContent(
-        "/Face-Resp/Build/Face-Resp.json",
-        "/Face-Resp/Build/UnityLoader.js"
+        "/face-rect/Build/face-rect.json",
+        "/face-rect/Build/UnityLoader.js"
     );
     
     return (
-        <div>
-            <Unity className="canvas" unityContent={unityContent} />
+        <div ref={ref}>
+            <Unity unityContent={unityContent} />
         </div>
     )
 
