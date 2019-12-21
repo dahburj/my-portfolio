@@ -14,7 +14,7 @@ const FaceModule = () => {
     );
     
     return (
-        <div ref={ref}>
+        <div>
             <Unity className="canvas" unityContent={unityContent} />
         </div>
     )
