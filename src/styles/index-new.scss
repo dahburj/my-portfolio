@@ -542,7 +542,8 @@ p {
   &--weather {
     background-image: url("https://portfolio-videos-2019.s3-us-west-2.amazonaws.com/Group.jpg");
     background-size: cover;
-    height: 50vh;
+    background-repeat: no-repeat;
+    max-height: 50vh;
     width: 100%;
   }
   &--posenet {
