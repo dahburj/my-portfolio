@@ -19,7 +19,6 @@ import ParallaxCard from "react-parallax-card";
 
 import Img from "gatsby-image";
 import DPCardComponent from "../components/depthcard";
-import FaceDetector from "./face-detector";
 import Unity,{ UnityContent } from "react-unity-webgl";
 
 const TopOfPage: React.FC = () => {
@@ -148,16 +147,17 @@ const CardVariants = {
   },
 }
 const UnityComponent = () => {
-    const unityContent = new UnityContent(
-      "/test/Build/test.json",
-      "/test/Build/UnityLoader.js"
-    );
+  const [ref, inView, entry] = useInView();
+  const unityContent = new UnityContent(
+    "/test/Build/test.json",
+    "/test/Build/UnityLoader.js"
+  );
 
-    return(
-      <div>
-        <Unity unityContent={unityContent} />
-      </div>
-    )
+  return(
+    <div ref={ref}>
+      <Unity unityContent={unityContent} />
+    </div>
+  )
 }
 
 const IndexPage: React.FC = () => {
@@ -213,6 +213,7 @@ const DigitalWalls = () => {
     scrollTo: '[data-scroll-to]',
     scrollDir: '[data-scroll-dir]'
   }
+  {/*
   const sectionsArray = Array.from(document.querySelectorAll(SELECTORS.section))
   const scrollToElements = document.querySelectorAll(SELECTORS.scrollTo)
   const scrollDirElements = document.querySelectorAll(SELECTORS.scrollDir)
@@ -229,8 +230,8 @@ const DigitalWalls = () => {
       return sectionsArray[currentSectionIndex]
     }
     return false
-  }
-  
+  }*/
+}
   
   return(
     <div className="app">
@@ -333,7 +334,7 @@ const DigitalWalls = () => {
                             <img src="https://img.icons8.com/ios/96/000000/yoga.png" style={{height: 150, width:150, bottom: 0, position: "fixed"}} />
                           </a>
                         </li>
-                      <Link to="/face-detector/">
+                      <Link to="/faceDetector/">
                         <li className="boxgrid__item">
                             <a href="#" className="box box--weather">
                             <p><span className="text--large">Face</span><br />Mark</p>
@@ -402,6 +403,7 @@ class IndexClass extends React.Component <Props> {
     return(
       <Layout>
         <DigitalWalls />
+       {/* <UnityComponent />*/}
       </Layout>
     )
   }
