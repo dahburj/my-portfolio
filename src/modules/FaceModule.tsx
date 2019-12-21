@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import Unity, { UnityContent } from "react-unity-webgl";
 import "../styles/index-new.scss"
 
-const FaceModule:React.FC = () => {
+const FaceModule = () => {
 
     const [ref, inView, entry] = useInView();
 
