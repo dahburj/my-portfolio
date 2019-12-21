@@ -382,13 +382,13 @@ const DigitalWalls = () => {
   
         
         <footer className="footer">
-            <p>Twiiter <a href="https://twitter.com/mxbck">@dahburj</a></p>
+            <p>Twiiter <a href="https://twitter.com/dahburj">@dahburj</a></p>
             
-            <p className="footer__more">
+          {/*  <p className="footer__more">
             <a href="https://codepen.io/mxbck/pen/81020404c9d5fd873a717c4612c914dd?editors=1000" target="_blank" rel="noopener noreferrer">View Source</a>
             &nbsp;&middot;&nbsp;
             <a href="https://mxb.at/blog/layouts-of-tomorrow/">Read More</a>
-            </p>
+            </p> */}
         </footer>
         </div>
   );
