@@ -334,18 +334,17 @@ const DigitalWalls = () => {
                             <img src="https://img.icons8.com/ios/96/000000/yoga.png" style={{height: 150, width:150, bottom: 0, position: "fixed"}} />
                           </a>
                         </li>
-                      <Link to="/FaceMark/">
-                        <li className="boxgrid__item--wide">
-                            <a href="#" className="box box--weather">
-                          {/*  <p><span className="text--large">Face</span><br />Mark</p> */}
-                              <div /><div /><div />
-                            </a>
-                        </li>
-                      </Link>
                       <Link to="/faceDetector/">
                         <li className="boxgrid__item boxgrid__item--wide">
                           <a href="#" className="box box--image">
                         {/*    <p><span className="text--large">Face</span><br />Detect</p> */}
+                          </a>
+                        </li>
+                      </Link>
+                      <Link to="/OpticalFlowPage/">
+                        <li className="boxgrid__item boxgrid__item">
+                          <a href="#" className="box box--optical-flow">
+                            <div /><div /><div />
                           </a>
                         </li>
                       </Link>
