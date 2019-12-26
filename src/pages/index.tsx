@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Logo  from "../components/logo";
-import Layout from "../components/layout";
+import Layout from "../components/layout-2";
 import SEO from "../components/seo"
 import Navbar from '../components/navbar';
 import MobileNavbar from '../components/mobileNavbar';
@@ -329,11 +329,13 @@ const DigitalWalls = () => {
                 </header>
                 <div className="sectionOne__content">
                     <ul className="boxgrid">
-                      <li className="boxgrid__item">
-                          <a href="#" className="box box--posenet">
-                            <img src="https://img.icons8.com/ios/96/000000/yoga.png" style={{height: 150, width:150, bottom: 0, position: "fixed"}} />
-                          </a>
-                        </li>
+                      <Link to="/PosePage">
+                        <li className="boxgrid__item">
+                            <a href="#" className="box box--posenet">
+                              <img src="https://img.icons8.com/ios/96/000000/yoga.png" style={{height: 150, width:150, bottom: 0, position: "fixed"}} />
+                            </a>
+                          </li>
+                      </Link>
                       <Link to="/faceDetector/">
                         <li className="boxgrid__item boxgrid__item--wide">
                           <a href="#" className="box box--image">

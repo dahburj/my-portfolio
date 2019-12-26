@@ -1,0 +1,82 @@
+* { box-sizing: border-box; }
+
+%whole-container {
+  width: 100%;
+  height: 100%;
+}
+
+%center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#example {
+  flex-grow: 1;
+  height: 100%;
+}
+
+@media (min-width: 600px) {
+  #example {
+    flex-grow: unset;
+    width: 600px;
+    height: 500px;
+  }
+}
+
+// PoseNet styling
+.PoseNet {
+  @extend %whole-container;
+  @extend %center-content;
+  
+
+  &__loading {
+    position: absolute;
+    font-family: 'Open Sans';
+  	font-size: 2em;
+  }
+
+  &__webcam {
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px;
+  }
+  &__video {
+    transform: scaleX(-1) !important;
+    -moz-transform: scaleX(-1) !important;
+    -o-transform: scaleX(-1) !important;
+    -webkit-transform: scaleX(-1) !important;
+    display: none !important;
+  }
+  &__video_play_button {
+    padding: 0;
+    align-self: center;
+    width: max-content;
+    height: max-content;
+  }
+  &__stop_play_button {
+    padding: 0;
+    align-self: center;
+    min-width: 100px;
+    min-height: 100px;
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  
+
+}
+

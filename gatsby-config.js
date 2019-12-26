@@ -4,9 +4,10 @@ const pkg = require(`./package.json`);
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Jamal Dahbur's Portfolio`,
+    description: `Jamal Dahbur's Portfolio`,
+    author: `@dahburj`,
+    siteURL: `https://jdahbur.com`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -57,10 +58,19 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+          rule: {
+            include: `${__dirname}/src/assets`
+          }
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
+            plugins: [`gatsby-remark-responsive-iframe`],
             resolve: `@raae/gatsby-remark-oembed`,
             options: {
               // usePrefix defaults to false
@@ -83,6 +93,12 @@ module.exports = {
         spaceId: `r2n8q1jk3a3h`,
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: 'VSLNvEuJd_PD7yXIBQ8jVIVasE_YmsCCWPOvSfYd1sE',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-catch-links`,
+      options: {
+        excludePattern: /(excluded-link|external)/,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
