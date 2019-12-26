@@ -3,13 +3,13 @@ import React, { useRef, useState, useEffect } from "react";
 import to from "await-to-js";
 import Loading from "../components/Loading";
 import useLoadPoseNet from "../hooks/useLoadPoseNet";
-
-import Layout from "../components/layout";
 import PoseNet from "../components/PoseNet/PoseNet";
+import Layout from "../components/layout-2";
 import Grid from "@material-ui/core/Grid"
 import { Button } from "@material-ui/core";
 import { PowerButtonComponent } from "../components/PoseNet/PowerButton";
 import { motion } from 'framer-motion';
+import "../styles/index-new.scss";
 
 {/* import CameraComponent from "../components/camera-compnent"; */ }
 
@@ -26,13 +26,19 @@ const PlayButtonVariants = {
   }
 };
 
-const PoseNetComponent = () => {
+const PoseNetVariants = {
+  hide: {
+    opacity: 0.5,
+    scaleX: 1,
+    scaleY: 1
+  },
+  show: {
+    opacity: 1,
+    scaleX: 1,
+    scaleY: 1
+  }
+};
 
-  const [isPoseActive, setPoseActive] = useState();
-
-  return isPoseActive ? <PoseNet /> : null
-
-}
 
 
 export default function PosePage() {
@@ -44,7 +50,10 @@ export default function PosePage() {
           <div className="PoseNet">
             <Grid container direction="column" justify="flex-start" alignItems="center">
               <Grid item xs={12}>
-                <PoseNet enabled={videoPlaying}/>
+                <motion.div variants={PoseNetVariants} animate={videoPlaying ? "show" : "hide"} initial={false}>
+                  <PoseNet enabled={videoPlaying}/>
+                </motion.div>
+                
               </Grid>
               <Grid item xs={12}>
                 <motion.div variants={PlayButtonVariants} animate={videoPlaying ? "show" : "hide"} >

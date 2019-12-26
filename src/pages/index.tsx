@@ -10,7 +10,7 @@ import VIDEOS from "../constants/videos";
 import styled from "styled-components";
 import Grid from "@material-ui/core/Grid";
 import { Box } from "@material-ui/core";
-import "../styles/index-new.scss"
+import "../styles/index-new.scss";
 
 import { useTransform, useMotionValue, useViewportScroll, motion, useAnimation } from 'framer-motion';
 
@@ -281,98 +281,95 @@ const DigitalWalls = () => {
         </nav>
         
         <main className="main">
-        <div className="sectionTwo" id="Home" data-section>
-              <div className="sectionTwo__header">
-                <VideoPlayer id={'video1'} video={VIDEOS[0]} />
+          <div className="sectionTwo" id="Home" data-section>
+                <div className="sectionTwo__header">
+                  <VideoPlayer id={'video1'} video={VIDEOS[0]} />
 
-                {/*<h1 className="sectionTwo__title">
-                  <h1>
-                    Home
+                  {/*<h1 className="sectionTwo__title">
+                    <h1>
+                      Home
+                    </h1>
                   </h1>
-                </h1>
-                <p className="sectionTwo__subtitle">38.44°N, 09.82°W</p>*/}
-                <div className="sectionTwo__controls">  
- 
-              {/* <button className="btn btn--prev" title="Previous">
-                      <span className="arrow arrow--left"></span>
-                  </button>
-                  <button className="btn btn--next" title="Next">
-                      <span className="arrow arrow--right"></span>
-                  </button>*/}
-                  <div className="user">
-                      <img src="https://portfolio-videos-2019.s3-us-west-2.amazonaws.com/10157343414530667.jpg" className="user__img" alt="" />
-                      <span className="user__name">Jamal Dahbur</span>
-                  </div>
-                  </div>
-                  </div>
-              <div className="sectionTwo__content">
-                  {/*<CardComponent />*/}
-                  <Logo />
-              </div>
-            </div>
-            <div className="sectionOne" id="Playground" data-section max-height="550px">
-                <header className="sectionOne__header">
-                    <h1 className="sectionOne__title">Playground</h1>
-                    <p className="sectionOne__subtitle">48.21°N, 16.36°E</p>
-                   {/* <div className="sectionOne__controls">
-                    <button className="btn btn--prev" title="Previous">
+                  <p className="sectionTwo__subtitle">38.44°N, 09.82°W</p>*/}
+                  <div className="sectionTwo__controls">  
+  
+                {/* <button className="btn btn--prev" title="Previous">
                         <span className="arrow arrow--left"></span>
                     </button>
                     <button className="btn btn--next" title="Next">
                         <span className="arrow arrow--right"></span>
-                    </button>
+                    </button>*/}
                     <div className="user">
-                        <img src="https://source.unsplash.com/200x200/?people" className="user__img" alt="" />
-                        <span className="user__name">Jamie</span>
+                        <img src="https://portfolio-videos-2019.s3-us-west-2.amazonaws.com/10157343414530667.jpg" className="user__img" alt="" />
+                        <span className="user__name">Jamal Dahbur</span>
+                    </div>
+                    </div>
+                    </div>
+                <div className="sectionTwo__content">
+                    {/*<CardComponent />*/}
+                    <Logo />
                 </div>
-                    </div>*/}
-                </header>
-                <div className="sectionOne__content">
-                    <ul className="boxgrid">
-                      <Link to="/PosePage">
-                        <li className="boxgrid__item">
-                            <a href="#" className="box box--posenet">
-                              <img src="https://img.icons8.com/ios/96/000000/yoga.png" style={{height: 150, width:150, bottom: 0, position: "fixed"}} />
+              </div>
+          <div className="sectionOne" id="Playground" data-section>
+                  <header className="sectionOne__header">
+                      <h1 className="sectionOne__title">Playground</h1>
+                      <p className="sectionOne__subtitle">48.21°N, 16.36°E</p>
+                    {/* <div className="sectionOne__controls">
+                      <button className="btn btn--prev" title="Previous">
+                          <span className="arrow arrow--left"></span>
+                      </button>
+                      <button className="btn btn--next" title="Next">
+                          <span className="arrow arrow--right"></span>
+                      </button>
+                      <div className="user">
+                          <img src="https://source.unsplash.com/200x200/?people" className="user__img" alt="" />
+                          <span className="user__name">Jamie</span>
+                  </div>
+                      </div>*/}
+                  </header>
+                  <div className="sectionOne__content">
+                      <ul className="boxgrid">
+                        <Link to="/PosePage">
+                          <li className="boxgrid__item">
+                              <a href="#" className="box box--posenet">
+                                <img src="https://img.icons8.com/ios/96/000000/yoga.png" style={{height: 150, width:150, bottom: 0, position: "fixed"}} />
+                              </a>
+                            </li>
+                        </Link>
+                        <Link to="/faceDetector/">
+                          <li className="boxgrid__item boxgrid__item--wide">
+                            <a href="#" className="box box--image">
+                          {/*    <p><span className="text--large">Face</span><br />Detect</p> */}
                             </a>
                           </li>
-                      </Link>
-                      <Link to="/faceDetector/">
-                        <li className="boxgrid__item boxgrid__item--wide">
+                        </Link>
+                        <Link to="/OpticalFlowPage/">
+                          <li className="boxgrid__item boxgrid__item">
+                            <a href="#" className="box box--optical-flow">
+                              <div /><div /><div />
+                            </a>
+                          </li>
+                        </Link>
+                    {/*}   <li className="boxgrid__item boxgrid__item--push">
                           <a href="#" className="box box--image">
-                        {/*    <p><span className="text--large">Face</span><br />Detect</p> */}
+                          <img src="https://source.unsplash.com/300x300/?people" className="box__img" alt="" />
                           </a>
                         </li>
-                      </Link>
-                      <Link to="/OpticalFlowPage/">
-                        <li className="boxgrid__item boxgrid__item">
-                          <a href="#" className="box box--optical-flow">
-                            <div /><div /><div />
+                        <li className="boxgrid__item">
+                          <a href="#" className="box box--cost">
+                          <p><span className="text--large">120€</span><br />Daily cost</p>
                           </a>
                         </li>
-                      </Link>
-                   {/*}   <li className="boxgrid__item boxgrid__item--push">
-                        <a href="#" className="box box--image">
-                        <img src="https://source.unsplash.com/300x300/?people" className="box__img" alt="" />
-                        </a>
-                      </li>
-                      <li className="boxgrid__item">
-                        <a href="#" className="box box--cost">
-                        <p><span className="text--large">120€</span><br />Daily cost</p>
-                        </a>
-                      </li>
-                      <li className="boxgrid__item boxgrid__item--push">
-                        <a href="#" className="box box--video">
-                        <img src="https://source.unsplash.com/300x300/?art" className="box__img" alt="" />
-                        </a>
-                  </li> */}
-                      
-                    </ul>
-                </div>
-            </div>
-
-
-
-            <div className="sectionThree" id="paidProjects" data-section>
+                        <li className="boxgrid__item boxgrid__item--push">
+                          <a href="#" className="box box--video">
+                          <img src="https://source.unsplash.com/300x300/?art" className="box__img" alt="" />
+                          </a>
+                    </li> */}
+                        
+                      </ul>
+                  </div>
+              </div>
+          <div className="sectionThree" id="paidProjects" data-section>
               <div className="sectionThree__header">
                   <h1 className="sectionThree__title">Professional Work</h1>
                   <p className="sectionThree__subtitle">UNDER CONSTRUCTION</p>

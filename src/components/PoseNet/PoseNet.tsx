@@ -17,7 +17,7 @@ import {
 
 export default function PoseNet({
   id = "PoseNet",
-  className = "",
+  className = "PoseNet__webcam",
   width = 600,
   height = 500,
   input = undefined,
@@ -33,7 +33,7 @@ export default function PoseNet({
   const net = useLoadPoseNet(modelConfig)
   const [image, setImage] = useState()
   const [errorMessage, setErrorMessage] = useState()
-
+  const [videoOn, setVideoOn] = useState();
 
   const onEstimateRef = useRef()
   const inferenceConfigRef = useRef()
@@ -41,7 +41,13 @@ export default function PoseNet({
   inferenceConfigRef.current = inferenceConfig
 
   useEffect(() => {
-    if (!enabled) return () => {};
+    if (!enabled) {
+      if(videoOn) {
+        stopCamera();
+      }
+      return;
+    };
+
     if (typeof input === "object") {
       input.width = width
       input.height = height
@@ -69,11 +75,26 @@ export default function PoseNet({
       const video = videoRef.current
       video.srcObject = stream
       video.onloadedmetadata = () => {
-        video.play()
-        setImage(video)
+        if(enabled) {
+          video.play()
+          setImage(video)
+          setVideoOn(true);
+        }
       }
     }
-    setupCamera()
+    async function stopCamera(){
+      if(videoOn)
+      {
+        const video = videoRef.current;
+          var track = video.srcObject;
+          if(track && track.active){
+              track.getTracks()[0].stop();
+              setImage();
+              setVideoOn(false);
+          }
+      }
+  }
+    setupCamera();
   }, [facingMode, frameRate, height, input, width, enabled])
 
   useEffect(() => {
