@@ -29,7 +29,7 @@ export default function DPCardComponent({data, linkTo}){
           {projectData.description}
     </div>*/}
         <div className="cardTitle">
-          {projectData.title}
+        {/*  {projectData.title}*/}
         </div>
       </ParallaxCard>
     );
