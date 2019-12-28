@@ -19,7 +19,8 @@ h1, h2, h3 {
 
 body {
   margin:0;
-  background-color:black;
+  background-color: transparent;
+ /* background-color:black; */
   font-family: 'Fira Sans', sans-serif;
 }
 .progress-icon {
@@ -57,6 +58,16 @@ body {
     margin-bottom: 20px;
   }
 }
+
+canvas {
+  width: 100%;
+  height: 100%;
+  position:fixed !important;
+  left:0;
+  top:0;
+  z-index: -50;
+}
+
 
 #sky {
   background-color:red;

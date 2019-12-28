@@ -5,6 +5,7 @@ $footer-height: 4rem;
 $border-radius: .5rem;
 $default-spacing: 2rem;
 
+
 $gray-dark: #121519;
 $gray: #a0a0a0;
 $gray-light: #F3F3F3;
@@ -38,6 +39,14 @@ html {
   margin: 0;
 }
 
+canvas {
+  @extend %whole-container;
+  @extend %center-content;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
 #example {
   flex-grow: 1;
   height: 100%;
@@ -59,7 +68,8 @@ body {
   margin-right: 0 auto;
   overflow: hidden;
   color: #FFF;
-  background-color: $gray-dark;
+ // background-color: $gray-dark;
+  background-color: transparent;
   font-family: 'Montserrat', 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -79,13 +89,20 @@ p {
 
 
 // ============= MAIN LAYOUT ==============
+.game-container canvas {
+  width: 100vh !important;
+  height: 100vh !important;
+  position: inherit;
+  z-index: -50;
+}
 
 .app {
-  
   display:grid;
   grid-template-rows: $header-height 1fr $footer-height;
   grid-template-columns: $nav-width 1fr;
+  background-color: transparent;
   height: 100vh;
+  z-index: 50;
   
 }
 
@@ -330,7 +347,7 @@ p {
     background-repeat:no-repeat;
     background-position: center center;
     text-shadow:0 0 20px rgba(0,0,0,0.25);
-    background-image: url('https://lonelyplanetimages.imgix.net/mastheads/stock-photo-st-stephens-church-112868985.jpg?sharp=10&vib=20&w=2000');
+   // background-image: url('https://lonelyplanetimages.imgix.net/mastheads/stock-photo-st-stephens-church-112868985.jpg?sharp=10&vib=20&w=2000');
 
     &::after {
       content:"";
@@ -424,16 +441,7 @@ p {
     overflow: visible;
     width: auto;
 
-    &::after {
-      content:"";
-      display:block;
-      position:absolute;
-      top:50%;
-      left:0;
-      right:0;
-      bottom:0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
-    }
+
   }
   &__title {
     font-size: 1.5rem;
