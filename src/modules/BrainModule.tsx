@@ -23,13 +23,9 @@ class WindowFrame extends React.Component {
             visibility: event.isIntersecting ? 'visible' : 'invisible',
         });
     };
-
-    triggerHomeAnim = (event) => {
-      return event.isIntersecting ? this.unityContent.send("GameController","TriggerAnimFunc",["inADHD", false]) : this.unityContent.send("GameController","TriggerAnimFunc",["inADHD", true]);
-    }
-    
+     
     triggerAdhdAnim = (event) => {
-        return event.isIntersecting ? this.unityContent.send("GameController","TriggerAnimFunc",["inADHD", "true"]) : this.unityContent.send("GameController","TriggerAnimFunc",["inADHD", "false"]);
+        return event.isIntersecting ? this.unityContent.send("GameController","TriggerAnimFunc", "inADHD true") : this.unityContent.send("GameController","TriggerAnimFunc", "inADHD false");
     }
     
     render() {

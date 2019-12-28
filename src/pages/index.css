@@ -20,7 +20,7 @@ h1, h2, h3 {
 body {
   margin:0;
   background-color: transparent;
- /* background-color:black; */
+ background-color:black;
   font-family: 'Fira Sans', sans-serif;
 }
 .progress-icon {

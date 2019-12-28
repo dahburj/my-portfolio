@@ -68,8 +68,8 @@ body {
   margin-right: 0 auto;
   overflow: hidden;
   color: #FFF;
- // background-color: $gray-dark;
-  background-color: transparent;
+  background-color: $gray-dark;
+  //background-color: transparent;
   font-family: 'Montserrat', 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -632,8 +632,6 @@ p {
     filter: brightness(110%) !important;
     z-index:10 !important;
   }
-   
-  
   &--weather {
     background-image: url("https://portfolio-videos-2019.s3-us-west-2.amazonaws.com/Group.jpg");
     background-size: cover;
@@ -779,7 +777,6 @@ p {
   &--right {
     transform: rotate(-45deg);
   }
-
   &--left {
       transform: rotate(135deg);
   }
