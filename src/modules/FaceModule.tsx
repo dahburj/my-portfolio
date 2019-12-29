@@ -16,6 +16,11 @@ const FaceModule:React.FC = () => {
     return (
         <div ref={ref} id="gameContainer">
             <Unity unityContent={unityContent} />
+            <footer>
+                © {new Date().getFullYear()}, Special thanks to
+                {` `}
+                <a href="https://enoxsoftware.com/opencvforunity/">Open Enox For Unity</a>
+            </footer>
         </div>
     )
 
