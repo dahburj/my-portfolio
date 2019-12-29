@@ -14,7 +14,7 @@ const FaceModule:React.FC = () => {
     );
     
     return (
-        <div ref={ref}>
+        <div ref={ref} id="gameContainer">
             <Unity unityContent={unityContent} />
         </div>
     )

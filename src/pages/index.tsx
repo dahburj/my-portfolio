@@ -329,6 +329,13 @@ const DigitalWalls = () => {
                   </header>
                   <div className="sectionOne__content">
                       <ul className="boxgrid">
+                        <Link to="/FaceMark/">
+                            <li className="boxgrid__item boxgrid__item">
+                              <a href="#" className="box box--facemark">
+                                <div /><div /><div />
+                              </a>
+                            </li>
+                          </Link>
                         <Link to="/PosePage">
                           <li className="boxgrid__item">
                               <a href="#" className="box box--posenet">
@@ -345,11 +352,12 @@ const DigitalWalls = () => {
                         </Link>
                         <Link to="/OpticalFlowPage/">
                           <li className="boxgrid__item boxgrid__item">
-                            <a href="#" className="box box--optical-flow">
+                            <a href="#" className="box box--opticalflow">
                               <div /><div /><div />
                             </a>
                           </li>
                         </Link>
+
                     {/*}   <li className="boxgrid__item boxgrid__item--push">
                           <a href="#" className="box box--image">
                           <img src="https://source.unsplash.com/300x300/?people" className="box__img" alt="" />

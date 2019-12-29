@@ -39,13 +39,6 @@ html {
   margin: 0;
 }
 
-canvas {
-  @extend %whole-container;
-  @extend %center-content;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-}
 
 #example {
   flex-grow: 1;
@@ -61,12 +54,11 @@ canvas {
 }
 
 body {
-  min-height:100vh;
   height: 100%;
   width: 100%;
   margin-left: 0 auto;
   margin-right: 0 auto;
-  overflow: hidden;
+  overflow: inherit;
   color: #FFF;
   background-color: $gray-dark;
   //background-color: transparent;
@@ -89,18 +81,12 @@ p {
 
 
 // ============= MAIN LAYOUT ==============
-.game-container canvas {
-  width: 100vh !important;
-  height: 100vh !important;
-  position: inherit;
-  z-index: -50;
-}
+
 
 .app {
   display:grid;
   grid-template-rows: $header-height 1fr $footer-height;
   grid-template-columns: $nav-width 1fr;
-  background-color: transparent;
   height: 100vh;
   z-index: 50;
   
@@ -632,7 +618,7 @@ p {
     filter: brightness(110%) !important;
     z-index:10 !important;
   }
-  &--weather {
+  &--facemark {
     background-image: url("https://portfolio-videos-2019.s3-us-west-2.amazonaws.com/Group.jpg");
     background-size: cover;
     width: 100%;
@@ -647,7 +633,7 @@ p {
     height: 500px;
     background-repeat: no-repeat;
   }
-  &--optical-flow {
+  &--opticalflow {
     background-image: url("https://opencv-python-tutroals.readthedocs.io/en/latest/_images/opticalflow_lk.jpg");
     background-size: cover;
     height: 355px;

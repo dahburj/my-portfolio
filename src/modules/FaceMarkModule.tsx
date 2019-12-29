@@ -7,12 +7,13 @@ const FaceMarkModule:React.FC = () => {
     const [ref, inView, entry] = useInView();
 
     const unityContent = new UnityContent(
-        "/face-mark/Build/face-mark.json",
-        "/face-mark/Build/UnityLoader.js"
+        "/FaceMark/Build/FaceMark.json",
+        "/FaceMark/Build/UnityLoader.js"
     );
 
+
     return (
-        <div ref={ref}>
+        <div ref={ref} id="gameContainer">
             <Unity unityContent={unityContent} />
         </div>
     )

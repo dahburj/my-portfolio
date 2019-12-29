@@ -9,7 +9,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import './layout.css';
-import zIndex from '@material-ui/core/styles/zIndex';
 
 //import Header from "./header"
 //import "./layout.css"
@@ -30,8 +29,8 @@ const Layout = ({ children }) => {
     <>
       <div
         style={{
-          margin: 5,
-          padding: 5
+          margin: 0,
+          padding: 0
         }}
       >
         <main>
