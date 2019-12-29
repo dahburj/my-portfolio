@@ -1,7 +1,6 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import to from "await-to-js";
-import Loading from "../Loading";
 import useLoadPoseNet from "../../hooks/useLoadPoseNet";
 
 import Layout from "../layout";
@@ -25,7 +24,7 @@ export default function PoseNet({
   inferenceConfig = {},
   modelConfig = {},
   facingMode = "user",
-  frameRate = 10,
+  frameRate = 8,
   enabled = true
 }) {
   const videoRef = useRef()

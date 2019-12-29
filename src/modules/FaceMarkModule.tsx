@@ -8,8 +8,8 @@ const FaceMarkModule:React.FC = () => {
     const [ref, inView, entry] = useInView();
 
     const unityContent = new UnityContent(
-        "/FaceMarkNewDev/Build/FaceMarkNewDev.json",
-        "/FaceMarkNewDev/Build/UnityLoader.js"
+        "/FaceMark446-GZIP/Build/FaceMark446-GZIP.json",
+        "/FaceMark446-GZIP/Build/UnityLoader.js"
     );
 
 
