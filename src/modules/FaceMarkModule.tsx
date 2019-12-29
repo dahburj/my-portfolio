@@ -8,8 +8,8 @@ const FaceMarkModule:React.FC = () => {
     const [ref, inView, entry] = useInView();
 
     const unityContent = new UnityContent(
-        "/FaceMark/Build/FaceMark.json",
-        "/FaceMark/Build/UnityLoader.js"
+        "/FaceMarkNewDev/Build/FaceMarkNewDev.json",
+        "/FaceMarkNewDev/Build/UnityLoader.js"
     );
 
 
@@ -19,9 +19,7 @@ const FaceMarkModule:React.FC = () => {
                 <Unity unityContent={unityContent} />
             </div>
             <footer>
-                © {new Date().getFullYear()}, Special thanks to
-                {` `}
-                <a href="https://enoxsoftware.com/opencvforunity/">Open Enox For Unity</a>
+                © {new Date().getFullYear()}, Jamal Dahbur
             </footer>
         </div>
 
