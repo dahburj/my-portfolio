@@ -15,9 +15,7 @@ import "../styles/index-new.scss";
 import { useTransform, useMotionValue, useViewportScroll, motion, useAnimation } from 'framer-motion';
 
 import { useInView } from "react-intersection-observer";
-import ParallaxCard from "react-parallax-card";
 
-import Img from "gatsby-image";
 import DPCardComponent from "../components/depthcard";
 import Unity,{ UnityContent } from "react-unity-webgl";
 
@@ -101,7 +99,7 @@ const CardComponent = () => {
   item.node.title.toLowerCase().search(filterValue.toLowerCase()) !== -1 || item.node.description.toLowerCase().search(filterValue.toLowerCase()) !== -1));*/}
 
   return(
-    <Grid container justify="space-around" direction="row" alignItems="center" spacing={6} >
+    <Grid className="grid" container justify="space-around" direction="row" alignItems="center" spacing={6} >
 
         {filteredProjects.map(project=> (
         <div key={`${project.node.slug}`} >
@@ -208,30 +206,7 @@ interface Props{
 }
 
 const DigitalWalls = () => {
-  const SELECTORS = {
-    section: '[data-section]',
-    scrollTo: '[data-scroll-to]',
-    scrollDir: '[data-scroll-dir]'
-  }
-  {/*
-  const sectionsArray = Array.from(document.querySelectorAll(SELECTORS.section))
-  const scrollToElements = document.querySelectorAll(SELECTORS.scrollTo)
-  const scrollDirElements = document.querySelectorAll(SELECTORS.scrollDir)
-  
-  let currentSectionIndex = 0
-  
-  const getScrollTarget = dir => {
-    if (dir === 'prev' && currentSectionIndex > 0) {
-      currentSectionIndex--
-      return sectionsArray[currentSectionIndex]
-    }
-    if (dir === 'next' && currentSectionIndex < sectionsArray.length-1) {
-      currentSectionIndex++
-      return sectionsArray[currentSectionIndex]
-    }
-    return false
-  }*/
-}
+
   
   return(
     <div className="app">
@@ -247,7 +222,7 @@ const DigitalWalls = () => {
         <nav className="nav">
             <ul className="nav__menu">
             <li className="nav__item">
-                <a href="#Home" className="nav__link" data-scroll-to>
+                <Link to="#Home" className="nav__link">
                 <div className="media">
                     <img src="https://images.pexels.com/photos/1544947/pexels-photo-1544947.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" className="media__img" />
                     <h4 className="media__content">
@@ -255,62 +230,47 @@ const DigitalWalls = () => {
                       Home
                     </h4>
                 </div>
-                </a>
+                </Link>
             </li>
             <li className="nav__item">
-                <a href="#Playground" className="nav__link" data-scroll-to>
+                <Link to="#Playground" className="nav__link">
                 <div className="media">
                     <img src="https://lonelyplanetimages.imgix.net/mastheads/stock-photo-st-stephens-church-112868985.jpg?sharp=10&vib=20&w=2000" alt="" className="media__img" />
                     <h4 className="media__content">
                     PlayGround
                     </h4>
                 </div>
-                </a>
+                </Link>
             </li>
             <li className="nav__item">
-                <a href="#paidProjects" className="nav__link" data-scroll-to>
+                <Link to="#paidProjects" className="nav__link">
                 <div className="media">
                     <img src="https://lonelyplanetimages.imgix.net/mastheads/GettyImages-538096543_medium.jpg?sharp=10&vib=20&w=2000" alt="" className="media__img" />
                     <h4 className="media__content">
                     <strong>Professional Projects</strong>
                     </h4>
                 </div>
-                </a>
+                </Link>
             </li>
             </ul>
         </nav>
-        
         <main className="main">
-          <div className="sectionTwo" id="Home" data-section>
-                <div className="sectionTwo__header">
+          <div className="sectionTwo" id="Home">
+                <header className="sectionTwo__header">
                   <VideoPlayer id={'video1'} video={VIDEOS[0]} />
-
-                  {/*<h1 className="sectionTwo__title">
-                    <h1>
-                      Home
-                    </h1>
-                  </h1>
-                  <p className="sectionTwo__subtitle">38.44°N, 09.82°W</p>*/}
                   <div className="sectionTwo__controls">  
-  
-                {/* <button className="btn btn--prev" title="Previous">
-                        <span className="arrow arrow--left"></span>
-                    </button>
-                    <button className="btn btn--next" title="Next">
-                        <span className="arrow arrow--right"></span>
-                    </button>*/}
                     <div className="user">
                         <img src="https://portfolio-videos-2019.s3-us-west-2.amazonaws.com/10157343414530667.jpg" className="user__img" alt="" />
                         <span className="user__name">Jamal Dahbur</span>
                     </div>
                     </div>
-                    </div>
+                    </header>
                 <div className="sectionTwo__content">
                     {/*<CardComponent />*/}
                     <Logo />
                 </div>
               </div>
-          <div className="sectionOne" id="Playground" data-section>
+          <div className="sectionOne" id="Playground">
                   <header className="sectionOne__header">
                       <h1 className="sectionOne__title">Playground</h1>
                       <p className="sectionOne__subtitle">48.21°N, 16.36°E</p>
@@ -331,39 +291,40 @@ const DigitalWalls = () => {
                       <ul className="boxgrid">
                         <Link to="/FaceMark/">
                             <li className="boxgrid__item boxgrid__item">
-                              <a href="#" className="box box--facemark">
+                              <div className="box box--facemark">
                                 <div /><div /><div />
-                              </a>
+                              </div>
                             </li>
                           </Link>
                         <Link to="/PosePage">
                           <li className="boxgrid__item">
-                              <a href="#" className="box box--posenet">
+                              <div className="box box--posenet">
                                 <img src="https://img.icons8.com/ios/96/000000/yoga.png" style={{height: 150, width:150, bottom: 0, position: "fixed"}} />
-                              </a>
+                              </div>
                             </li>
                         </Link>
                         <Link to="/faceDetector/">
                           <li className="boxgrid__item boxgrid__item--wide">
-                            <a href="#" className="box box--image">
+                            <div className="box box--image">
                           {/*    <p><span className="text--large">Face</span><br />Detect</p> */}
-                            </a>
+                            </div>
                           </li>
                         </Link>
                         <Link to="/OpticalFlowPage/">
                           <li className="boxgrid__item boxgrid__item">
-                            <a href="#" className="box box--opticalflow">
+                            <div className="box box--opticalflow">
                               <div /><div /><div />
-                            </a>
+                            </div>
                           </li>
                         </Link>
-
-                    {/*}   <li className="boxgrid__item boxgrid__item--push">
-                          <a href="#" className="box box--image">
-                          <img src="https://source.unsplash.com/300x300/?people" className="box__img" alt="" />
-                          </a>
-                        </li>
-                        <li className="boxgrid__item">
+                      {/*}  <Link to="/BarracudaPoseNetPage/">
+                          <li className="boxgrid__item boxgrid__item--push">
+                            <div className="box box--image">
+                            <img src="https://source.unsplash.com/300x300/?people" className="box__img" alt="" />
+                            </div>
+                          </li>
+                        </Link>
+                {/*}        <li className="boxgrid__item">
                           <a href="#" className="box box--cost">
                           <p><span className="text--large">120€</span><br />Daily cost</p>
                           </a>
@@ -377,21 +338,22 @@ const DigitalWalls = () => {
                       </ul>
                   </div>
               </div>
-          <div className="sectionThree" id="paidProjects" data-section>
+          <div className="sectionThree" id="paidProjects">
               <div className="sectionThree__header">
                   <h1 className="sectionThree__title">Professional Work</h1>
                   <p className="sectionThree__subtitle">UNDER CONSTRUCTION</p>
+                  <div className="sectionThree__content">
+                    <CardComponent />
+                  </div>
               </div>
-              <div className="sectionThree__content">
-                  <CardComponent />
-              </div>
+
             </div>
         </main>
         
   
         
         <footer className="footer">
-            <p>Twiiter <a href="https://twitter.com/dahburj">@dahburj</a></p>
+            <p>Twiter <a href="https://twitter.com/dahburj">@dahburj</a></p>
             
           {/*  <p className="footer__more">
             <a href="https://codepen.io/mxbck/pen/81020404c9d5fd873a717c4612c914dd?editors=1000" target="_blank" rel="noopener noreferrer">View Source</a>
