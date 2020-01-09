@@ -117,17 +117,17 @@ p {
   position: relative;
   transform-style: preserve-3d;
   scroll-snap-align: start;
-
+  max-height: inherit;
+  max-width: inherit;
   &__header {
     position:inherit;
-    height: 100vh;
+
     padding: $default-spacing;
     border-radius: $border-radius;
     background-size:cover;
     background-repeat:no-repeat;
     background-position: center center;
     text-shadow:0 0 20px rgba(0,0,0,0.25);
-    background-image: url('https://lonelyplanetimages.imgix.net/mastheads/stock-photo-st-stephens-church-112868985.jpg?sharp=10&vib=20&w=2000');
 
   }
   &__title {
@@ -156,7 +156,7 @@ p {
   }
   
   @media screen and (min-width: 1024px) {
-    margin-bottom:$section-height * 1.5;
+    margin-bottom: 0;
 
     &__header {
      transform: translateZ(-1px) scale(1.9);
@@ -174,16 +174,25 @@ p {
 // ============= CONTENT BOX GRID ==============
 
 .boxgrid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  grid-auto-rows: minmax(110px, auto);
+  display:inline-flexbox;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  grid-auto-rows: minmax(10px, auto);
   grid-gap: 2rem .5rem;
+  max-width: 70%;
+  max-height: 40%;
 
   @media screen and (max-width: 699px) {
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
     grid-auto-rows: minmax(10px, auto);
     grid-gap: 2rem .5rem;
+    background-size: cover;
+    width: auto;
+    max-height: 256px;
+    min-height: 100px;
+
+    background-repeat: no-repeat;
+
   }
   
   &__item {
@@ -191,6 +200,20 @@ p {
     
     &--wide {
       grid-column: span 2;
+      background-size: cover;
+      width: auto;
+      max-height: 256px;
+      min-height: 100px;
+      min-width: 150px;
+      background-repeat: no-repeat;
+      background-position-x: -55px;
+      @media screen and(max-width: 699px) {
+        max-height: 199px;
+        min-height: 100px;
+        min-width: 100px;
+        background-position-x: -55px;
+
+      }
     }
     &--push {
       @media screen and (min-width: 1280px) {
@@ -220,7 +243,7 @@ p {
 
 
 .grid {
-  width: calc(100% + 48px);
+  width: 60%;
   height: calc(50% + 48px);
 }
 
@@ -229,7 +252,6 @@ p {
 
 .box {
   display:flex;
-  flex: 1 0 0;
   position:relative;
   padding: $default-spacing;
   border-radius: $border-radius;
@@ -241,43 +263,48 @@ p {
   filter: brightness(100%);
 
 
-  &:focus,
-  &:hover{
-    transform: scale(1.07) !important;
-    filter: brightness(110%) !important;
-    z-index:10 !important;
-  }
   &--facemark {
     background-image: url("https://portfolio-videos-2019.s3-us-west-2.amazonaws.com/Group.jpg");
     background-size: cover;
-    width: 100%;
+    width: auto;
     background-repeat: no-repeat;
-    height: 256px;
-    background-position-x: -55px;
+    max-height: 256px;
+    min-height: 100px;
     @media screen and(max-width: 699px) {
-      height: 199px;
+      max-height: 199px;
+      min-height: 100px;
+
     }
 
   }
   &--posenet {
     background-image: url("https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
     background-size: cover;
-    width: 100%;
-    height: 256px;
+    width: auto;
+    max-height: 256px;
+    min-height: 100px;
+
     background-repeat: no-repeat;
     @media screen and(max-width: 699px) {
-      height: 199px;
+      max-height: 199px;
+      min-height: 100px;
+
     }
   }
   &--opticalflow {
     background-image: url("https://opencv-python-tutroals.readthedocs.io/en/latest/_images/opticalflow_lk.jpg");
     background-size: cover;
-    height: 256px;
+    background-origin: $border-radius;
+    width: auto;
+    max-height: 300px;
+    min-height: 130px;
+    min-width: 65px;
     background-repeat: no-repeat;
-    padding: 0;
-    background-position-x: -100px;
     @media screen and(max-width: 699px) {
-      height: 199px;
+      max-height: 199px;
+      min-height: 100px;
+      min-width: 65px;
+
     }
   }
   &--cost {
@@ -289,62 +316,43 @@ p {
   &--image{
     background-image: url("https://portfolio-videos-2019.s3-us-west-2.amazonaws.com/face-rect-new.jpg");
     background-size: cover;
-    background-position-x: -50px;
-    width: 100%;
-    height: 256px;
+    width: auto;
+    min-height: 100px;
+    min-width: 100px;
+    max-height: 256px;
     background-repeat: no-repeat;
     padding: 0;
     @media screen and(max-width: 699px) {
-      height: 199px;
+      max-height: 199px;
+      min-height: 100px;
+      min-width: 100px;
+
     }
   }
 
     &--opticalflow {
     background-image: url("https://opencv-python-tutroals.readthedocs.io/en/latest/_images/opticalflow_lk.jpg");
     background-size: cover;
-    height: 256px;
+    width: auto;
+
+    max-height: 256px;
+    min-height: 100px;
+
     background-repeat: no-repeat;
     padding: 0;
-    background-position-x: -100px;
     @media screen and(max-width: 699px) {
-      height: 199px;
+      max-height: 199px;
+      min-height: 100px;
+
     }
   }
 
-  &--video {
-    padding: 0;
-    // fake a video play button
-    &::before,
-    &::after {
-      content: "";
-      display:block;
-      position:absolute;
-      top:50%;
-      left:50%;
-      z-index:10;
-      transform: translate(-50%, -50%);
-    }
-    &::before {
-      width: 50px;
-      height:50px;
-      background-color: #FFF;
-      border-radius:50%;
-      box-shadow: 0 0 38px rgba(0,0,0,0.30);
-    }
-    &::after {
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 10px 0 10px 15px;
-      border-color: transparent transparent transparent $gray-dark;
-      margin-left:2px;
-    }
-  }
+ 
 
   &__img {
-    display:block;
-    width:100%;
-    height:100%;
+    display:flex;
+    max-width:100%;
+    max-height:100%;
     position:absolute;
     object-fit: cover;
     object-position: center;

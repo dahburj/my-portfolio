@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "New PoseNet",
+"productVersion": "0.1",
+"dataUrl": "BarracudaPoseNetTest2.data.unityweb",
+"wasmCodeUrl": "BarracudaPoseNetTest2.wasm.code.unityweb",
+"wasmFrameworkUrl": "BarracudaPoseNetTest2.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": true,
+"multithreading": false,
+"unityVersion": "2019.3.0f3"
+}

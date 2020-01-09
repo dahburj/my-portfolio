@@ -2,52 +2,71 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from "gatsby";
 import "../assets/scss/index-new.scss"
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    },
+  }),
+);
+
 
 const ButtonGrid = () => {
-  return(
-      <div className="sectionOne">
-        <header className="sectionOne__header">
-          <div className="sectionOne__content">
-            <ul className="boxgrid">
-              <Link to="/FaceMark/">
-                  <li className="boxgrid__item boxgrid__item">
-                    <div className="box box--facemark">
-                      <div /><div /><div />
-                    </div>
-                  </li>
-                </Link>
-              <Link to="/PosePage">
-                <li className="boxgrid__item">
-                    <div className="box box--posenet">
-                      <img src="https://img.icons8.com/ios/96/000000/yoga.png" style={{height: 150, width:150, bottom: 0, position: "fixed"}} />
-                    </div>
-                  </li>
-              </Link>
-              <Link to="/faceDetector/">
-                <li className="boxgrid__item boxgrid__item--wide">
-                  <div className="box box--image">
-                {/*    <p><span className="text--large">Face</span><br />Detect</p> */}
-                  </div>
-                </li>
-              </Link>
-              <Link to="/OpticalFlowPage/">
-                <li className="boxgrid__item boxgrid__item">
-                  <div className="box box--opticalflow">
-                    <div /><div /><div />
-                  </div>
-                </li>
-              </Link>
-            </ul>
-        </div>
-        </header>
 
-  </div>
+  const classes = useStyles();
+
+  return(
+    <div className="sectionOne">
+              <Grid
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                
+                  <Link to="/FaceMark/">
+                    <Grid item xs className="boxgrid__item boxgrid__item">
+                      <div className="box box--facemark">
+                        <div /><div /><div />
+                      </div>
+                    </Grid>
+                  </Link>
+                  <Link to="/PosePage">
+                    <Grid item xs className="boxgrid__item">
+                        <div className="box box--posenet">
+                          <img src="https://img.icons8.com/ios/96/000000/yoga.png" style={{maxHeight: '75px', maxWidth:'75px', bottom: 0, position: "inherit"}} />
+                        </div>
+                      </Grid>
+                  </Link>
+                  <Link to="/faceDetector/">
+                    <Grid item xs className="boxgrid__item boxgrid__item--wide">
+                      <div className="box box--image">
+                      </div>
+                    </Grid>
+                  </Link>
+                  <Link to="/OpticalFlowPage/">
+                    <Grid item xs className="boxgrid__item boxgrid__item">
+                      <div className="box box--opticalflow">
+                        <div /><div />
+                      </div>
+                    </Grid>
+                  </Link>
+              </Grid>
+          </div>
   )
 }
 
