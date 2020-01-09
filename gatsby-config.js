@@ -14,6 +14,14 @@ module.exports = {
     `gatsby-plugin-typescript`,
     'gatsby-plugin-typescript-checker',
     {
+      resolve: `gatsby-plugin-hotjar-tracking`,
+      options: {
+        includeInDevelopment: false,
+        id: 1628263,
+        sv: 6
+      }
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         root: path.join(__dirname, '.'),
