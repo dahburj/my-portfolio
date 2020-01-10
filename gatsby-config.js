@@ -14,14 +14,6 @@ module.exports = {
     `gatsby-plugin-typescript`,
     'gatsby-plugin-typescript-checker',
     {
-      resolve: `gatsby-plugin-hotjar-tracking`,
-      options: {
-        includeInDevelopment: false,
-        id: 1628263,
-        sv: 6
-      }
-    },
-    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         root: path.join(__dirname, '.'),
@@ -47,6 +39,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-hotjar-tracking`,
+      options: {
+        includeInDevelopment: false,
+        id: 1628263,
+        sv: 6
+      }
+    },
+    {
       resolve: `gatsby-plugin-sass-resources`,
       options: {
         resources: [path.join(__dirname, `src/assets/scss/main.scss`)]
@@ -62,7 +62,7 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/Saturn.svg', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-offline'
