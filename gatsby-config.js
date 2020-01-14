@@ -39,14 +39,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-hotjar-tracking`,
-      options: {
-        includeInDevelopment: true,
-        id: 1628263,
-        sv: 6
-      }
-    },
-    {
       resolve: `gatsby-plugin-sass-resources`,
       options: {
         resources: [path.join(__dirname, `src/assets/scss/main.scss`)]
