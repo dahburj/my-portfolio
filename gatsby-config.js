@@ -65,6 +65,6 @@ module.exports = {
         icon: 'src/images/Saturn.svg', // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-offline'
+    //'gatsby-plugin-offline'
   ],
 }
